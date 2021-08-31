@@ -1,11 +1,20 @@
 import _ from "lodash";
 import type { NextPage } from "next";
 import Head from "next/head";
-import { Input } from "postcss";
 import { useEffect, useState } from "react";
 import { TangleStore, useTangle } from "../utils/TangleStore";
 
-const COLORS = ["yellow", "green", "blue", "red", "gray"] as const;
+const COLORS = [
+  "gray",
+  "cranberry",
+  "barney",
+  "purple",
+  "blue",
+  "green",
+  "yellow",
+  "orange",
+  "red",
+] as const;
 const NUM_CELLS = 2000;
 const NUM_COLS = 40;
 
@@ -16,25 +25,38 @@ type HighlightEvent = {
 };
 const HighlightStore = new TangleStore<HighlightEvent>();
 
+// For recording the GIF
+const INITIAL_DELAY = 8_000;
+const NUM_ITERATIONS = 1000;
+
 const Home: NextPage = () => {
   useEffect(() => {
-    setInterval(() => {
-      const randomIndex = Math.floor(Math.random() * NUM_CELLS);
+    let iterations = 0;
+    setTimeout(() => {
+      setInterval(() => {
+        const randomIndex = Math.floor(Math.random() * NUM_CELLS);
 
-      HighlightStore.dispatchEvent({
-        type: `highlight-${randomIndex}`,
-        idx: randomIndex,
-        color: _.sample(COLORS) as typeof COLORS[number],
-      });
+        // Only for recording the demo
+        if (iterations > NUM_ITERATIONS) {
+          return;
+        }
+        iterations++;
 
-      setTimeout(() => {
         HighlightStore.dispatchEvent({
           type: `highlight-${randomIndex}`,
           idx: randomIndex,
-          color: "gray",
+          color: _.sample(COLORS) as typeof COLORS[number],
         });
-      }, 800);
-    }, 10);
+
+        setTimeout(() => {
+          HighlightStore.dispatchEvent({
+            type: `highlight-${randomIndex}`,
+            idx: randomIndex,
+            color: "gray",
+          });
+        }, 600);
+      }, 10);
+    }, INITIAL_DELAY);
   }, []);
 
   return (
@@ -120,9 +142,9 @@ const Cell = ({ idx }: { idx: number }) => {
         .cell {
           width: 20px;
           height: 20px;
-          background-color: ${color};
+          background-color: var(--${color});
           border-radius: 100%;
-          transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+          transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
         }
       `}</style>
     </div>

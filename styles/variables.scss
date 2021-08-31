@@ -1,0 +1,195 @@
+$calendar-red: #d86156;
+
+$adaptive-white: white;
+$adaptive-white1: #fafcff;
+$adaptive-white2: #f6f9fc;
+$adaptive-white4: #e3e9f0;
+
+$gray: #bfcbda;
+$gray1: rgba($gray, 0.125);
+$gray2: rgba($gray, 0.25);
+$gray4: rgba($gray, 0.5);
+
+$primary-color: #1e354d;
+$primary-active-color: #031930;
+$primary-shadow-color: #1e354d22;
+$primary-shadow-color-50: #1e354d11;
+
+$secondary-color: #6c8199;
+$secondary-active-color: #425a74;
+$secondary-shadow-color: #1e354d11;
+$secondary-shadow-color-50: #1e354d07;
+$secondary: $secondary-color;
+
+$tertiary-color: #99a9bb;
+
+$background-color: $adaptive-white2;
+$body-background-color: $adaptive-white;
+$placeholder-color: $gray4;
+$disabled-background-color: $adaptive-white4;
+
+$blue: #0f7aff;
+
+$dark-brand-color: #409cff;
+
+$luma-pink: #ec4b86;
+$luma-pink-active: #f03278;
+$luma-pink1: rgba($luma-pink, 0.125);
+$luma-pink2: rgba($luma-pink, 0.25);
+$luma-pink4: rgba($luma-pink, 0.5);
+
+$membership-purple: #9458ff;
+$membership-purple-active: #7729ff;
+$membership-purple1: rgba($membership-purple, 0.125);
+$membership-purple2: rgba($membership-purple, 0.25);
+$membership-purple4: rgba($membership-purple, 0.5);
+
+$danger-color: #dd2134;
+$danger-active-color: #c41c2c;
+$danger-shadow-color: #41060c22;
+$danger-shadow-color-50: #41060c11;
+$danger-bg-color: #ffd6db;
+
+$success-shadow-color: #06361122;
+$success-shadow-color-50: #06361111;
+$success-bg-color: #d0f3d8;
+
+$warning-shadow-color: #3a2c0522;
+$warning-shadow-color-50: #3a2c0511;
+
+$dark-adaptive-white: #10171d;
+$dark-adaptive-white2: #21272d;
+
+$black: #000000;
+
+$colors: (
+  "calendar-red": $calendar-red,
+  "body-background-color": $body-background-color,
+  "adaptive-white": $adaptive-white,
+  "adaptive-white1": $adaptive-white1,
+  "adaptive-white2": $adaptive-white2,
+  "adaptive-white4": $adaptive-white4,
+  "gray1": $gray1,
+  "gray2": $gray2,
+  "gray4": $gray4,
+  "gray": $gray,
+  "pale-gray": $gray1,
+  "black": $black,
+  "blue": $blue,
+  "luma-pink": $luma-pink,
+  "luma-pink-active": $luma-pink-active,
+  "luma-pink1": $luma-pink1,
+  "luma-pink2": $luma-pink2,
+  "luma-pink4": $luma-pink4,
+  "membership-purple": $membership-purple,
+  "membership-purple-active": $membership-purple-active,
+  "membership-purple1": $membership-purple1,
+  "membership-purple2": $membership-purple2,
+  "membership-purple4": $membership-purple4,
+  "primary-color": $primary-color,
+  "primary-active-color": $primary-active-color,
+  "primary-shadow-color": $primary-shadow-color,
+  "primary-shadow-color-50": $primary-shadow-color-50,
+  "secondary-color": $secondary-color,
+  "secondary-active-color": $secondary-active-color,
+  "secondary-shadow-color": $secondary-shadow-color,
+  "secondary-shadow-color-50": $secondary-shadow-color-50,
+  "tertiary-color": $tertiary-color,
+  "background-color": $background-color,
+  "placeholder-color": $placeholder-color,
+  "disabled-background-color": $disabled-background-color,
+  "danger-color": $danger-color,
+  "danger-active-color": $danger-active-color,
+  "danger-shadow-color": $danger-shadow-color,
+  "danger-shadow-color-50": $danger-shadow-color-50,
+  "danger-bg-color": $danger-bg-color,
+  "success-shadow-color": $success-shadow-color,
+  "success-shadow-color-50": $success-shadow-color-50,
+  "success-bg-color": $success-bg-color,
+  "warning-shadow-color": $warning-shadow-color,
+  "warning-shadow-color-50": $warning-shadow-color-50,
+  "dark-adaptive-white": $dark-adaptive-white,
+  "dark-adaptive-white2": $dark-adaptive-white2,
+);
+
+$transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+$bounce-transition: all 0.3 cubic-bezier(0.54, 1.12, 0.38, 1.11);
+$fast-transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+
+$font: -apple-system, BlinkMacSystemFont, Inter, Segoe UI, Roboto,
+  Helvetica Neue, Arial, Noto Sans, sans-serif, Apple Color Emoji,
+  Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
+$mono-font: "SF Mono", menlo, monaco, consolas, "Courier New", Courier,
+  monospace;
+
+body {
+  --max-width: 820px;
+  --horizontal-padding: 1rem;
+  --transition: #{$transition};
+  --fast-transition: #{$fast-transition};
+  --font: #{$font};
+  --mono-font: #{$mono-font};
+
+  --border-radius: 0.5rem;
+
+  --light-font-weight: 300;
+  --regular-font-weight: 400;
+  --medium-font-weight: 500;
+  --bold-font-weight: 700;
+  --black-font-weight: 800;
+
+  // Table
+  --table-header-sortable-hover-color: var(--brand-color);
+  --table-empty-color: var(--secondary-color);
+
+  --primary-shadow: 0 1px 3px var(--primary-shadow-color),
+    0 3px 8px var(--primary-shadow-color-50);
+  --primary-hover-shadow: 0 1px 3px var(--primary-shadow-color),
+    0 6px 16px var(--primary-shadow-color-50);
+  --secondary-shadow: 0 1px 3px var(--secondary-shadow-color),
+    0 3px 8px var(--secondary-shadow-color-50);
+  --secondary-hover-shadow: 0 1px 3px var(--secondary-shadow-color),
+    0 6px 16px var(--secondary-shadow-color-50);
+  --brand-shadow: 0 1px 3px var(--brand-shadow-color),
+    0 3px 8px var(--brand-shadow-color-50);
+  --brand-hover-shadow: 0 1px 3px var(--brand-shadow-color),
+    0 6px 16px var(--brand-shadow-color-50);
+  --success-shadow: 0 1px 3px var(--success-shadow-color),
+    0 3px 8px var(--success-shadow-color-50);
+  --success-hover-shadow: 0 1px 3px var(--success-shadow-color),
+    0 6px 16px var(--success-shadow-color-50);
+  --danger-shadow: 0 1px 3px var(--danger-shadow-color),
+    0 3px 8px var(--danger-shadow-color-50);
+  --danger-hover-shadow: 0 1px 3px var(--danger-shadow-color),
+    0 6px 16px var(--danger-shadow-color-50);
+  --warning-shadow: 0 1px 3px var(--warning-shadow-color),
+    0 3px 8px var(--warning-shadow-color-50);
+  --warning-hover-shadow: 0 1px 3px var(--warning-shadow-color),
+    0 6px 16px var(--warning-shadow-color-50);
+
+  --segment-color: var(--tertiary-color);
+  --segment-selected-color: var(--primary-color);
+  --segment-divider-color: var(--divider-color, --gray4);
+  --segment-bg-color: var(--secondary-bg-color, --gray2);
+  --segment-slider-bg-color: var(--primary-bg-color, white);
+
+  --primary-bg-color: white;
+
+  --ig-gradient: linear-gradient(
+    45deg,
+    #f09433 0%,
+    #e6683c 25%,
+    #dc2743 50%,
+    #cc2366 75%,
+    #bc1888 100%
+  );
+  --tiktok-gradient: linear-gradient(45deg, #68c9d0 0%, #ef1c51 100%);
+  --facebook-brand-color: #1877f2;
+  --whatsapp-brand-color: #25d366;
+  --twitter-brand-color: #1d9bf0;
+  --linkedin-brand-color: #2867b2;
+  --messenger-brand-color: #593fff;
+  --gmail-brand-color: #ea4335;
+  --messages-brand-color: #65c466;
+  --slack-brand-color: #4a154b;
+}
