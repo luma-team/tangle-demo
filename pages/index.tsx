@@ -26,8 +26,8 @@ type HighlightEvent = {
 const HighlightStore = new TangleStore<HighlightEvent>();
 
 // For recording the GIF
-const INITIAL_DELAY = 8_000;
-const NUM_ITERATIONS = 1000;
+const INITIAL_DELAY = 0;
+const NUM_ITERATIONS = Infinity;
 
 const Home: NextPage = () => {
   useEffect(() => {
@@ -71,7 +71,17 @@ const Home: NextPage = () => {
 
       <div className="container">
         <h3>Tangle</h3>
-        <p>Event driven state changes in React</p>
+        <p>
+          Event driven state changes in React.{" "}
+          <a
+            href={"https://github.com/luma-team/tangle-demo"}
+            target={"_blank"}
+            rel={"noreferrer"}
+          >
+            GitHub
+          </a>
+          .
+        </p>
 
         <InputBox />
 

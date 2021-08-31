@@ -24,3 +24,15 @@ input {
   font-size: inherit;
   line-height: inherit;
 }
+
+a {
+  color: var(--brand-color);
+  cursor: pointer;
+  text-decoration: none;
+  background-color: transparent;
+
+  &:hover {
+    text-decoration: none;
+    color: var(--brand-active-color);
+  }
+}
