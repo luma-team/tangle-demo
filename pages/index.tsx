@@ -67,6 +67,7 @@ const Home: NextPage = () => {
           name="description"
           content="Event driven state changes in React."
         />
+        <link rel="shortcut icon" href="/favicon.ico" />
       </Head>
 
       <div className="container">
