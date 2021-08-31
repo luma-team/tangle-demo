@@ -16,7 +16,6 @@ const COLORS = [
   "red",
 ] as const;
 const NUM_CELLS = 2000;
-const NUM_COLS = 40;
 
 type HighlightEvent = {
   type: `highlight-${number}`;
@@ -25,38 +24,25 @@ type HighlightEvent = {
 };
 const HighlightStore = new TangleStore<HighlightEvent>();
 
-// For recording the GIF
-const INITIAL_DELAY = 0;
-const NUM_ITERATIONS = Infinity;
-
 const Home: NextPage = () => {
   useEffect(() => {
-    let iterations = 0;
-    setTimeout(() => {
-      setInterval(() => {
-        const randomIndex = Math.floor(Math.random() * NUM_CELLS);
+    setInterval(() => {
+      const randomIndex = Math.floor(Math.random() * NUM_CELLS);
 
-        // Only for recording the demo
-        if (iterations > NUM_ITERATIONS) {
-          return;
-        }
-        iterations++;
+      HighlightStore.dispatchEvent({
+        type: `highlight-${randomIndex}`,
+        idx: randomIndex,
+        color: _.sample(COLORS) as typeof COLORS[number],
+      });
 
+      setTimeout(() => {
         HighlightStore.dispatchEvent({
           type: `highlight-${randomIndex}`,
           idx: randomIndex,
-          color: _.sample(COLORS) as typeof COLORS[number],
+          color: "gray",
         });
-
-        setTimeout(() => {
-          HighlightStore.dispatchEvent({
-            type: `highlight-${randomIndex}`,
-            idx: randomIndex,
-            color: "gray",
-          });
-        }, 600);
-      }, 10);
-    }, INITIAL_DELAY);
+      }, 600);
+    }, 10);
   }, []);
 
   return (
