@@ -116,9 +116,8 @@ const Grid = () => {
 
       <style jsx>{`
         .grid {
-          display: grid;
-          grid-template-columns: repeat(${NUM_COLS}, 1fr);
-          grid-gap: 4px;
+          display: flex;
+          flex-wrap: wrap;
         }
       `}</style>
     </div>
@@ -145,6 +144,9 @@ const Cell = ({ idx }: { idx: number }) => {
           background-color: var(--${color});
           border-radius: 100%;
           transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+
+          margin-bottom: 4px;
+          margin-right: 4px;
         }
       `}</style>
     </div>
